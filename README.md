@@ -4,12 +4,6 @@ Originally built in 2020 as an interactive treasure hunt game, this project was 
 
 ---
 
-## Demo
-(real images has been replaced with a placeholder icon)
-https://agongar-dev.github.io/gincana-app/
-
----
-
 ## Features
 
 - Multi-step treasure hunt experience
