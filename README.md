@@ -90,7 +90,7 @@ src/
 
 ## Key Implementation Details
 
-**Routing**
+### Routing
 
 Routing is handled using React Router v6:
 
@@ -98,7 +98,7 @@ Routing is handled using React Router v6:
 - /overview → main hint list
 - /hint-stage → active hint view
 
-**State Management**
+### State Management
 
 - State is managed locally using React's `useState` hook
 - State lifting used to update parent components
@@ -108,7 +108,7 @@ No global state management is used, keeping the architecture simple and focused 
 
 ---
 
-**Dynamic Hint System**
+### Dynamic Hint System
 
 Hints are defined as structured objects:
 
@@ -122,7 +122,7 @@ UI updates dynamically based on the state of the hints.
 
 ---
 
-**Final Challenge**
+### Final Challenge
 
 The final challenge is a password-based lock system that requires the user to enter the correct combination to complete the game.
 
