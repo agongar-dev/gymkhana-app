@@ -1,35 +1,74 @@
 .container {
-  display: grid;
-  place-items: center;
+  display: block;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.dev-panel {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.dev-panel .danger {
+  background-color: #d62828;
+}
+
+.dev-panel .danger:hover {
+  background-color: #9d0208;
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  place-items: center;
-  height: 100%;
-  justify-items: center;
-  align-items: center;
-  grid-gap: 80px 1px;
+  gap: 20px; /* antes 80px */
+  width: 100%;
+  max-width: 600px;
 }
 
 .grid-item {
-  overflow: hidden;
-  border-radius: 10px;
-  border: 2px solid #ccc;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease-in-out;
-  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* cuadrados */
+  border-radius: 12px;
+}
+
+.grid-item button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 button {
   padding: 4px 4px;
 }
 
+.hint-image-wrapper {
+  position: relative;
+}
+
+.hint-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.hint-overlay h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
 .icon {
   position: absolute;
-  top: 0;
-  right: 80%;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  pointer-events: none;
 }
 
 .icon img {
@@ -41,8 +80,4 @@ button {
   display: block;
   max-width: 100%;
   max-height: 100%;
-}
-
-.grid-item:hover {
-  transform: scale(1.1);
 }

@@ -8,7 +8,10 @@ function HintStage(props) {
   const [showCongrats, setShowCongrats] = useState(false);
   const [answer, setAnswer] = useState("");
 
-  const closeHint = () => setIsVisible(false);
+  const closeHint = () => {
+    setIsVisible(false);
+    props.showHint(false);
+  };
 
   const handleSuccess = () => {
     setShowCongrats(false);
@@ -49,7 +52,7 @@ function HintStage(props) {
           <button onClick={closeHint} className="close-button">
             X
           </button>
-
+          <img className="hint-stage-image" src={props.image} alt="hint" />
           <h1>{props.message}</h1>
 
           <form

@@ -7,7 +7,7 @@ const hints = [
     message: "Pista: Ciclo del agua",
     unlocked: true,
     solved: false,
-    answer: "CONDENSACION",
+    answer: "1",
   },
   {
     id: 1,
@@ -15,7 +15,7 @@ const hints = [
     message: "Pista: Animal",
     unlocked: false,
     solved: false,
-    answer: "RATON",
+    answer: "1",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const hints = [
     message: "Si cada una pesa 2kg, ¿cuánto pesa todo?",
     unlocked: false,
     solved: false,
-    answer: "28",
+    answer: "1",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const hints = [
     message: "Pista: Hay quien dice que es una fruta y quien dice que no lo es...",
     unlocked: false,
     solved: false,
-    answer: "TOMATE",
+    answer: "1",
   },
   {
     id: 4,
@@ -39,7 +39,7 @@ const hints = [
     message: "No clues, jajaja",
     unlocked: false,
     solved: false,
-    answer: "FATHER AND SON",
+    answer: "1",
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ const hints = [
     message: "Pista: Dicen que dan mucho miedo",
     unlocked: false,
     solved: false,
-    answer: "MURCIELAGO",
+    answer: "1",
   },
   {
     id: 6,
@@ -55,7 +55,7 @@ const hints = [
     message: "Pista: Pequeño, no es...",
     unlocked: false,
     solved: false,
-    answer: "ELEFANTE",
+    answer: "1",
   },
   {
     id: 7,
@@ -63,7 +63,7 @@ const hints = [
     message: "Pista: Hay una en cada casa...",
     unlocked: false,
     solved: false,
-    answer: "MESA",
+    answer: "1",
   },
   {
     id: 8,
@@ -71,7 +71,7 @@ const hints = [
     message: "Pista: mmmmmmmmmmm...",
     unlocked: false,
     solved: false,
-    answer: "CHOCOLATE",
+    answer: "1",
   }
 ];
 
@@ -109,9 +109,17 @@ const lockHint = {
 }
 
 function initData() {
-  storage.set("hints", hints);
-  storage.set("lockPassword", lockPassword);
-  storage.set("lockHint", lockHint);
+  if (!storage.get("hints")) {
+    storage.set("hints", hints);
+  }
+
+  if (!storage.get("lockPassword")) {
+    storage.set("lockPassword", lockPassword);
+  }
+
+  if (!storage.get("lockHint")) {
+    storage.set("lockHint", lockHint);
+  }
 }
 
 export default initData;

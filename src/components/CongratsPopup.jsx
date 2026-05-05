@@ -87,17 +87,14 @@ function CongratsPopup({ id, showHint, setShowCongrats }) {
     );
   }
 
-  // Normal flow
   return (
     <div className="popup active">
-      <div>
+      <div className="popup-content">
         <h2>
           ¡Felicidades! <br />
           Lo estáis haciendo genial
         </h2>
-      </div>
 
-      <div className="popup-content">
         <p>La siguiente prueba está aquí.</p>
 
         <img

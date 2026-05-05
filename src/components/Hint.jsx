@@ -3,8 +3,14 @@ import HintStage from "../routes/HintStage";
 
 function Hint(props) {
   const [isOpen, setIsOpen] = useState(false);
+  const [showPreview, setShowPreview] = useState(false);
 
   const handleOpen = () => {
+    if (props.solved) {
+      setShowPreview(true);
+      return;
+    }
+
     if (props.unlocked) {
       setIsOpen(true);
     }
@@ -18,7 +24,13 @@ function Hint(props) {
     <>
       <div className="grid-item">
         <button onClick={handleOpen}>
-          <img src={imageSrc} alt="hint" />
+          <div className="hint-image-wrapper">
+            <img src={imageSrc} alt="hint" />
+
+            <div className="hint-overlay">
+              <h3>{props.message}</h3>
+            </div>
+          </div>
         </button>
 
         {props.solved && (
@@ -34,6 +46,14 @@ function Hint(props) {
           showHint={setIsOpen}
           values={props.values}
         />
+      )}
+
+      {showPreview && (
+        <div className="popup active" onClick={() => setShowPreview(false)}>
+          <div className="popup-content">
+            <img src={props.image} alt="preview" />
+          </div>
+        </div>
       )}
     </>
   );
